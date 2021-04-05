@@ -9,6 +9,25 @@
 				"constant": true,
 				"inputs": [
 					{
+						"name": "_rank",
+						"type": "uint256"
+					}
+				],
+				"name": "valueAtRankReverse",
+				"outputs": [
+					{
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
 						"name": "value",
 						"type": "uint256"
 					}
@@ -75,6 +94,25 @@
 					{
 						"name": "_exists",
 						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "valueRankReverse",
+				"outputs": [
+					{
+						"name": "_rank",
+						"type": "uint256"
 					}
 				],
 				"payable": false,
@@ -488,7 +526,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/contracts/HitchensOrderStatisticsTree.sol": "HitchensOrderStatisticsTree"
+			"dependencies/OrderStatisticsTree/contracts/HitchensOrderStatisticsTree.sol": "HitchensOrderStatisticsTree"
 		},
 		"evmVersion": "byzantium",
 		"libraries": {},
@@ -499,13 +537,19 @@
 		"remappings": []
 	},
 	"sources": {
-		"localhost/contracts/HitchensOrderStatisticsTree.sol": {
-			"keccak256": "0xfb7656d8410937fcbb97bd3e5ca7dbd9fdb2f0a71e64f453951fd8ca36225614",
+		"dependencies/OrderStatisticsTree/contracts/HitchensOrderStatisticsTree.sol": {
+			"keccak256": "0x0a1fda92cfd432eeb2204df031a36316cacbf6037559090d3e2f964ba2048072",
 			"urls": [
-				"bzzr://31f91f96a242b92e4d5e2a5db93de6faab17c7cf3370089c4c60c38979cf6b76"
+				"bzzr://d4f91035aa5f749630db202c626fde37b82f467ec9d0815394504192c1a268f2"
 			]
 		},
-		"localhost/contracts/Owned.sol": {
+		"dependencies/OrderStatisticsTree/contracts/HitchensOrderStatisticsTreeLib.sol": {
+			"keccak256": "0x33ced49f4864c24c6c89c2fa2e962ccaf9e96316e3d610aa929002e6dba10ee6",
+			"urls": [
+				"bzzr://d3c51a4ef99cf349a6bc507118da889eaf86805fc6e8967cdbf12c03d636ae17"
+			]
+		},
+		"dependencies/OrderStatisticsTree/contracts/Owned.sol": {
 			"keccak256": "0x7e33ac18d51897110d75d33808f6db9bca46133a839f093f22014fccc3754e0c",
 			"urls": [
 				"bzzr://63ecf788bbe9ed2de96a434fdc4ce104ac6526530acc2e33dfe9667be3da7a30"

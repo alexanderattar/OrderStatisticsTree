@@ -141,6 +141,42 @@ library HitchensOrderStatisticsTreeLib {
     function above(Tree storage self, uint value) public view returns(uint _above) {
         if(count(self) > 0) _above = count(self)-rank(self,value);
     } 
+    function valueBelowEstimate(Tree storage self, uint estimate) public view returns(uint _below) {
+        if(count(self) > 0 && estimate > 0) {
+            uint256 highestValue = last(self);
+            uint256 lowestValue = first(self);
+            if(estimate < lowestValue) {
+                return 0;
+            }
+            if(estimate >= highestValue) {
+                return highestValue;
+            }
+            uint256 rankOfValue = rank(self, estimate); // approximation
+            _below = atRank(self, rankOfValue);
+            if(_below > estimate) { // fix error in approximation
+                rankOfValue--;
+                _below = atRank(self, rankOfValue);
+            }
+        }
+    }
+    function valueAboveEstimate(Tree storage self, uint estimate) public view returns(uint _above) {
+        if(count(self) > 0 && estimate > 0) {
+            uint256 highestValue = last(self);
+            uint256 lowestValue = first(self);
+            if(estimate > highestValue) {
+                return 0;
+            }
+            if(estimate <= lowestValue) {
+                return lowestValue;
+            }
+            uint256 rankOfValue = rank(self, estimate); // approximation
+            _above = atRank(self, rankOfValue);
+            if(_above < estimate) { // fix error in approximation
+                rankOfValue++;
+                _above = atRank(self, rankOfValue);
+            }
+        }
+    } 
     function rank(Tree storage self, uint value) internal view returns(uint _rank) {
         if(count(self) > 0) {
             bool finished;
