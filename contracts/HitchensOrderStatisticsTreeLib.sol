@@ -99,12 +99,12 @@ library HitchensOrderStatisticsTreeLib {
         if(!exists(self, value)) return false;
         return self.nodes[value].keys[self.nodes[value].keyMap[key]] == key;
     } 
-    function getNode(Tree storage self, uint value) internal view returns (uint _parent, uint _left, uint _right, bool _red, uint keyCount, uint count) {
+    function getNode(Tree storage self, uint value) internal view returns (uint _parent, uint _left, uint _right, bool _red, uint keyCount, uint __count) {
         require(exists(self,value), "OrderStatisticsTree(403) - Value does not exist.");
         Node storage gn = self.nodes[value];
         return(gn.parent, gn.left, gn.right, gn.red, gn.keys.length, gn.keys.length+gn.count);
     }
-    function getNodeCount(Tree storage self, uint value) internal view returns(uint count) {
+    function getNodeCount(Tree storage self, uint value) internal view returns(uint __count) {
         Node storage gn = self.nodes[value];
         return gn.keys.length+gn.count;
     }
