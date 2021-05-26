@@ -33,10 +33,11 @@
 	},
 	"sources": {
 		"dependencies/OrderStatisticsTree/contracts/HitchensOrderStatisticsTreeLib.sol": {
-			"keccak256": "0xbdde9e611074bae8317dfac8eb279f74e2c2436142038d807f306b9496d6dad6",
+			"keccak256": "0xdbda4075c6f8760fe6d0f0575d2c91f4984321e894ba49a0951a2a785fdeeaa0",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://9df0b0062dab4e138f5d8191039a54b3fcd0b3b1a0a0d1ba4af1bb674a25ba76",
-				"dweb:/ipfs/QmUw93jnAs9DwjVKteTRzRExefQ4UG5MtCEHTz3RDc79AU"
+				"bzz-raw://4697742ca86a4682f528714ddbe59d4fb755bd82a65b784c47ac3ac419ce6054",
+				"dweb:/ipfs/QmfSd2LKSs8DzB3WYpfnzySrFXPYwpYkUMFKVUJ2PAKcn6"
 			]
 		}
 	},
